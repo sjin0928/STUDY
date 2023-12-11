@@ -1,0 +1,57 @@
+<!doctype thml>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>실행순서</title>
+    <!-- jQuery import 방식 1-->
+    <!--<script src="js/jquery-3.7.1.min.js"></script> -->
+    <!-- jQuery import 방식 2 CDN 방식-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    //JavaScript 실행 순서
+    let order = 1;
+    console.log(order++ + " : head script 시작 - " + $("#test").text() + "::");
+    
+    // body태그 이후 실행으로 dom 사용가능
+    //.ready는 dom 이 준비된 이후에 실행함.
+    $(document).ready(function(){
+        console.log(order++ + " : jQuery ready 시작" + $("#test").text() + "::");
+        call();
+        
+        console.log(order++ + " : jQuery ready 끝" + $("#test").text() + "::");
+        
+        $("#btn").click(function(){
+            console.log(order++ + " : btn click 시작 - " + $("#test").text() + "::");
+            call();
+            console.log(order++ + " : btn click 끝 - " + $("#test").text() + "::");
+        });
+    });
+    
+    function call() {
+        console.log(order++ + " : function call() 내부" + $("#test").text());
+    };
+    // 현위치 호출은 dom 사용 불가
+    call();
+    
+    
+    
+    console.log(order++ + " : head script 끝 - " + $("#test").text() + "::");
+</script>
+</head>
+<body>
+<script>
+    console.log(order++ + " : body 시작 - " + $("#test").text() + "::");
+</script>
+    
+    <h2>JavaScript 실행 순서</h2>
+    <button onclick="call()">call() function 호출(HTML)</button>
+    <button id="btn">call() function 호출(jQuery)</button>
+    
+    <p id="test">DOM 사용 가능</p>
+
+<script>
+    //body에서 이미 객체 생성이 되어있으므로 사용 가능
+    console.log(order++ + " : body 끝 - " + $("#test").text() + "::");
+</script>
+</body>
+</html>

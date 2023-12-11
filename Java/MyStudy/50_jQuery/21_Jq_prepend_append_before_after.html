@@ -1,0 +1,75 @@
+<!doctype thml>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>태그 추가</title>
+    <!-- jQuery import 방식 1-->
+    <!--<script src="js/jquery-3.7.1.min.js"></script> -->
+    <!-- jQuery import 방식 2 CDN 방식-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    //prepend, append : 선택한 요소의 자녀태그로 맨 앞에, 맨 뒤에 추가
+    //before, after : 선택한 요소의 동일 레벨(형제 요소) 앞에, 뒤에 추가
+    $(function(){
+        //prepend() : 자녀태그 추가 - 맨 앞에
+        $("#myDiv").prepend("<p>(앞1)반갑습니다(prepend)</p>");
+        $("#myDiv").prepend("<p>(앞2)반갑습니다(prepend)</p>");
+        //myDiv의 자녀태그들의 맨앞에 추가됨(뒤에 선언된 게 맨위로)
+        
+        //append() : 자녀태그 추가 - 맨 뒤에
+        $("#myDiv").append("<p>(뒤1)반가워요(append)</p>");
+        $("#myDiv").append("<p>(뒤2)반가워요(append)</p>");
+        //myDiv의 자녀태그들의 맨뒤에 추가됨(뒤에 선언된 게 맨뒤로)
+        
+        //before, after : 선택한 요소의 동일 레벨(형제 요소) 앞에, 뒤에 추가
+        $("#myDiv").before("<p>1반갑습니다(before)</p>");
+        $("#myDiv").before("<p>2반갑습니다(before)</p>");
+        //myDiv와 같은 레벨의 앞에 추가됨(뒤에 선언된게 맨 위로)
+        
+        $("#myDiv").after("<p>#1반갑습니다(after)</p>");
+        $("#myDiv").after("<p>#2반갑습니다(after)</p>");
+        //myDiv와 같은 레벨의 바로 뒤에 추가됨(뒤에 선언된 게 선택 태그 다음으로)
+        
+        //==========
+        //wrap() : 바깥 쪽에서 감싸는 태그 추가
+        $("h2").wrap("<em>"); //<em>추가되어 기울임꼴로 변경됨
+        
+        //------------
+        //<a> 태그를 목록(li) 감싸서 마지막에 <ul>에 넣기
+        $("a").wrap("<li class='menuList'>"); //a태그에 li로 감싸기
+        //$("li").wrap("<ul>"); //ul이 하나씩 다입혀짐
+        $(".menuList:first").before("<ul id='menu'>"); //li 앞쪽에 ul태그 만들기
+        $("#menu").html($(".menuList")); //ul에 li넣기
+    });
+</script>
+<style>
+    h2 { border: 2px solid orange; }
+    #myDiv { border:3px solid blue; }
+    
+</style>
+</head>
+<body>
+    <h2>Java Web 프로그램 관련</h2>
+    <a href="#">Java</a>
+    <a href="#">JavaScript</a>
+    <a href="#">JSP</a>
+    <a href="#">Spring</a>
+    
+    <hr>
+    <p class="myClass">1장~~~</p>
+    <div>내용.......</div>
+    <p class="myClass">1장~~~</p>
+    <div>내용.......</div>
+    <p class="myClass">1장~~~</p>
+    <div>내용.......</div>
+    
+    <hr>
+    
+    <div id="myDiv">
+        <p>안녕하세요</p>
+        <p>반갑습니다</p>
+        <p>또 만나요</p>
+    </div>
+    
+</body>
+</html>

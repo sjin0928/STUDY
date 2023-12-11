@@ -1,0 +1,83 @@
+<!doctype thml>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- jQuery import 방식 1-->
+    <!--<script src="js/jquery-3.7.1.min.js"></script> -->
+    <!-- jQuery import 방식 2 CDN 방식-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+    div {
+        width: 320px;
+        margin: 0 auto;
+        position: : relative;
+    }
+    
+    div > a {
+        /* 위치 설정 */
+        position: absolute;
+        top: 150px;
+        /* 모양(형태), 색상 */
+        width: 50px; height: 50px;
+        background-color: yellow;
+        border-radius: 25%;
+        /* 텍스트 설정 */
+        text-decoration: none; /*밑줄 삭제*/
+        text-align: center;
+        line-height: 50px; /*박스의 높이와 같게하면 세로 정렬 가운데*/
+    }
+    #prev { left: 20px; }
+    #next { right: 20px; }
+</style>
+<script>
+    //prev, next: 버튼이 클릭되었을때 처리
+    $(document).ready(function(){
+        let imgNum = 2
+        //next 클릭시 : 다음 이미지 표시(img태그 srt 속성값 변경
+        $("#next").click(function(){
+            imgNum++;
+            console.log("next 클릭 imgNum : " + imgNum);
+            
+            if(imgNum > 10) imgNum = 1; //처음이미지 번호로 변경
+            
+            if(imgNum < 10){
+               imgNum = "0" + imgNum;
+            }
+            $("img").prop("src", "images/bimg" + imgNum + ".jpg");
+        });
+        
+        //prev 선택시 : 이전 이미지 표시(실습)
+        $("#prev").on("click", function(){
+            imgNum--;
+            if (imgNum < 1) img = 10; //마지막 번호로 변경
+            if(imgNum < 10){
+               imgNum = "0" + imgNum;
+            }
+            console.log("prev 클릭 : " + imgNum);
+            
+            $("img").prop("src", "images/bimg" + imgNum + ".jpg");
+        });
+        /*
+        $("#prev").click(function(){
+            imgNum--;
+            if(imgNum == 0) imgNum = 10;
+            if(imgNum < 10){
+                imgNum = "0" + imgNum;
+            }
+            console.log("prev : " + imgNum);
+            
+            $("img").prop("src", "images/bimg" +  imgNum  + ".jpg");
+        });
+        */
+    });
+</script>
+</head>
+<body>
+    <div>
+        <img src="images/bimg01.jpg" alt="상품이미지">
+        <a id="prev" href="#">prev</a>
+        <a id="next" href="#">next</a>
+    </div>
+</body>
+</html>

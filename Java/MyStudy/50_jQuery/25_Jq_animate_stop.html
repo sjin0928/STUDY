@@ -1,0 +1,41 @@
+<!doctype thml>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- jQuery import 방식 1-->
+    <!--<script src="js/jquery-3.7.1.min.js"></script> -->
+    <!-- jQuery import 방식 2 CDN 방식-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // .animate({속성값}, 밀리초) : 밀리초 동안 위치로 이동
+        $("#go").click(function(){
+            console.log("go click~");
+            //$("#myDiv").animate({left: "200px", top: "200px"}, 3000);
+            $("#myDiv").animate({left: "+=200px", top: "+=200px"}, 3000);
+        });
+        $("#back").click(function(){
+            console.log("go click~");
+            $("#myDiv").animate({left: "-=200px", top: "-=200px"}, 1000);
+        });
+        $("#stop").click(function(){
+            console.log("go click~");
+            $("#myDiv").stop(); // 현재 진행중인 동작을 취소(멈춤)
+        });
+    });
+</script>
+<style>
+    #myDiv { position: absolute; }
+    /* #myDiv { left: 200px; top: 200px; } */
+</style>
+</head>
+<body>
+    <button id="go">이동</button>
+    <button id="back">반대로 이동</button>
+    <button id="stop">정지</button>
+    <div id="myDiv">
+        <img src="images/image1.gif">
+    </div>
+</body>
+</html>

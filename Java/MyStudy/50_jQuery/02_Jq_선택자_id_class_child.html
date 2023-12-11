@@ -1,0 +1,98 @@
+<!doctype thml>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jq 선택자 id, class, child</title>
+    <!-- jQuery import 방식 1-->
+    <!--<script src="js/jquery-3.7.1.min.js"></script> -->
+    <!-- jQuery import 방식 2 CDN 방식-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+    .bg-aqua { background-color: aqua; }
+    .bg-yellow { background-color: yellow; }
+    
+    .red { color: red; }
+    .green { color: green; }
+    .blue { color: blue; }
+    
+    .horizontal {
+        float: left;
+        list-style: none;
+        margin: 10px;
+    }
+    .clear { clear: both; } /*다음줄*/
+    .sizeUp { font-size: 1.5em; }
+    .bold { font-weight:  bold; }
+    
+    li { margin: 5px; }
+</style>
+<script>
+    //jQuery 사용해서 문서가 준비된 후
+    //addClass("클래스명") : class명 설정
+    $(document).ready(function(){
+        // 아이디 속성명으로 해당 요소를 찾아 클래스 속성명 "green"설정
+        $("#jsp").addClass("green");
+        
+        // (.)클래스명으로 선택하고 클래스 속성명 "red"설정
+        $(".js").addClass("red");
+        
+        // 태그명으로 요소(elements) 선택하기
+        // li태그를 찾고 배경색 지정
+        // 직접 스타일을 지정하는건 나중에 한게 우선
+        //$("li").css("background-color", "aqua");
+        //$("li").css("background-color", "yellow");
+        
+        // 태그명으로 찾고, 클래스명 추가
+        // style태그 내부의 클래스 작성 순서에 따라 스타일지정
+        $("li").addClass("bg-aqua");
+        $("li").addClass("bg-yellow");
+        
+        //--------------------
+        // 자식, 자손 태그 컨트롤
+        //자식(자녀) 선택(>) : 하위 자녀 (child) 요소 선택
+        $("ul>li").addClass("horizontal");
+        $("hr").addClass("clear");
+        
+        // 자손 선택자(빈칸) : 부모 선택자 + 빈칸 + 찾을태그
+        $("div p").addClass("sizeUp");
+        
+        $("div > p").addClass("bold");
+        $("div > p").css("border", "2px solid blue");
+        
+        $("div > div > p").addClass("bg-yellow");
+    });
+</script>
+</head>
+<body>
+    <ul> <!--동그라미 토글 리스트-->
+        <li class="red">Java</li>
+        <li>HTML5 &amp; CSS3</li>
+        <li class="js ">JavaScript &amp; jQuery</li>
+        <li id="jsp">Servlet &amp; JSP</li>
+    </ul>
+    <hr>
+    <ol> <!--번호토글 리스트-->
+        <li>Java</li>
+        <li>HTML5 &amp; CSS3</li>
+        <li class="js">JavaScript &amp; jQuery</li>
+        <li>Servlet &amp; JSP</li>
+    </ol>
+    <hr>
+    <div>
+        <p>div-p : p태그</p>
+        <div>
+            <span>
+                <p>div-div-span-p : p태그</p>
+            </span>
+            <span>div-div-span 태그</span>
+        </div>
+        <div>
+            <div>
+                <p>div-idv-p 태그</p>
+            </div>
+            <p>div-div-p 태그</p>
+        </div>
+        <p>div-p : p태그</p>
+    </div>
+</body>
+</html>
