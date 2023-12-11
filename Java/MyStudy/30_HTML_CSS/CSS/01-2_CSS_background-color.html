@@ -1,0 +1,49 @@
+<!doctype thml>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS link</title>
+        
+        <style>
+            /* 가중치가 동일한 경우에는 뒤쪽에 있는 스타일이 적용됨 */
+            p{
+                background-color:blueviolet;
+                font-size: 2em; /*가변길이 부모요소의 폰트사이즈의 2배*/
+            }   
+        </style>
+        <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+        
+    </head>
+    <body>
+    <!--
+        CSS문법 : 선택자 { 속성명 : 속성값; [속성명 : 속성값;] }
+        작성위치
+            1. HTML 태그안(속성형태, 인라인 방식)
+                style="속성명 : 속성값; [속성명 : 속성값;]"
+            2. <head> 태그 내부의 <style> 태그 내에 작성
+                <style>
+                    선택자 { 속성명 : 속성값; [속성명 : 속성값;] }
+                </style>
+            3. 외부 스타일파일 링크 연결 방식(head 태그 안에 선언)
+                <link rel="stylesheet" type="text/css" href="mystyle.css">
+    -->
+        <h1>CSS 바탕색 지정 : background-color</h1>
+        <h2>H2태그 : 속성없음</h2>
+        <h2 class="red">H2태그 : 속성 class="red"</h2>
+        <h2 class="green">H2태그 : 속성 class="green"</h2>
+        
+        <h3 class="yellow">배경색 노랗게</h3>
+        <div class="yellow">배경색 노란색(div=class="yellow")</div>
+        <hr>
+        
+        <p>일반 p태그(id, class 속성 없는)</p>
+        <p id="yellow">p태그-id 속성을 가진 p태그</p>
+        <p class="yellow"> p태그 - class속성을 가진</p>
+        <hr>
+        <p>일반 p태그(id, class 속성 없는)</p>
+        <div>
+            <p>div안에 있는 p태그</p>
+            <p class="green">div 안에 있는p태그(class="green")</p>
+        </div>
+    </body>
+</html>

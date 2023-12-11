@@ -1,0 +1,37 @@
+<!doctype thml>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>form input radio, checkbox</title>
+    </head>
+    <body>
+        <h2>input radio, checkbox</h2>
+        <form>
+            <!-- radio로 값을 하나만 선택-->
+            <!-- name이 같은 것들 중에는 하나만 선택 가능 -->
+            <input type="radio" name="gender" value="M" checked>남자
+            <input type="radio" name="gender" value="F">여자
+            <hr>
+            
+            <!-- checkbox 값을 선택적으로 여러개 선택 -->
+            <input type="checkbox" name="hobby" value="baseball">야구
+            <input type="checkbox" name="hobby" value="football">축구
+            <input type="checkbox" name="hobby" value="basketball">농구
+            <input type="checkbox" name="hobby" value="tenis">테니스
+            <hr>
+            
+            <!-- label 연결하기 -->
+            <!-- id는 한 페이지에서는 유니크한 값을 가지는 것이 원칙 -->
+            <input type="checkbox" name="hobby" value="baseball" id="baseball2">
+            <label for="baseball2">야구</label>
+            <input type="checkbox" name="hobby" value="football" id="football2">
+            <label for="football2">축구</label>
+            
+            <hr>
+            <input type="submit" value="전송">
+        </form>
+        
+        
+        
+    </body>
+</html>
