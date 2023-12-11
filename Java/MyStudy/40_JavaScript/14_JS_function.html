@@ -1,0 +1,49 @@
+<!doctype thml>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS function</title>
+<script>
+    // var 선언변수의 사용범위 function
+    // var, fucntion : hoisting - 끌어올려짐
+    
+    document.write("var 선언전 globalVar : " + globalVar, "<br>");
+    var globalVar = "전역변수 globalVar";
+    document.write("<hr>");
+    
+    // function은 호출문이 선언문 이전에 있어도 실행된다.
+    // function을 hoisting 처리하기 때문이다.
+    displayMsg();
+    
+    function displayMsg(param) {
+        document.write("function displayMsg() ~~~", "<br>");
+        //자바와 달리 파라미터 값이 없어도 실행 됨
+        document.write("-->> 파라미터 param : " + param, "<br>");
+        document.write("-->> globalVar : " + globalVar, "<br>");
+        
+        // 함수 내에서 선언된 var 변수는 지역변수(함수 내에서만 사용됨)
+        var localVar = "function 내에서만 사용되는 지역변수";
+        document.write(">> localVar : " + localVar, "<br>");
+        
+        // 함수내에서 var 키워드 없이 선언된 변수 : 전역변수 처리됨
+        // (주의) 명시적으로 var, let 키워드 사용해서 변수 선언
+        localNoVar = "function 내에서 var 없이 선언된 변수 - 전역변수"
+        document.write("==>> function 내부 localNoVar : " + localNoVar, "<br>");
+        document.write("<hr>");
+    }
+    
+    displayMsg("param값 전달");
+    
+    document.write(">>>>>>> function 외부", "<br>");
+    // document.write("-->>function 외부사용 localVar :" + localVar, "<br>");
+    // 함수 내부꺼는 외부에서 사용 불가
+    document.write("==>> function 외부 localNoVar : " + localNoVar, "<br>");
+    
+    
+    document.write("<h3>=== Script 끝 ====</h3>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

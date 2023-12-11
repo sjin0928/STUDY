@@ -1,0 +1,73 @@
+<!doctype thml>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS: Math</title>
+<script>
+    /* Math 내장객체
+    Math.PI : 파이값(3.141592..)
+    Math.max(숫자1, 숫자2, ..., 숫자n) : 최대값 선택(반환)
+    Math.min(숫자1, 숫자2, ..., 숫자n) : 최소값 선택(반환)
+    Math.pow(숫자, 제곱값)  : 숫자의 거듭제곱 값 반환 (>> ** )
+    Math.ratndom() : 0~1 사이의 실수형 난수반환(0부터 1미만)
+    Math.ceil(숫자) : 소수점 첫째자리에서 올림(큰 숫자 선택)
+    Math.floor(숫자) : 정수 데이터 반환(작은 숫자 선택, 소수점 이하 내림)
+    Math.trunc(숫자) : 정수 데이터 반환(소수점 이하 버림)
+    Math.round(숫자) : 정수 데이터 반환(소수점 이하 반올림)
+    */
+    document.write("Math.PI : " + Math.PI, "<br>");
+    
+    // 최대값 구하기
+    let maxNum = Math.max(10, 5, 6, 8, 100);
+    document.write("Math.max(10, 5, 6, 8, 100) : " + maxNum, "<br>");
+    
+    // 최소값 구하기
+    let minNum = Math.min(10, 5, 6, 8, 100);
+    document.write("Math.min(10, 5, 6, 8, 100) : " + minNum, "<br>");
+    
+    let num1 = 2.5234;
+    let num2 = 2.0234;
+    
+    // 반올림
+    let roundNum = Math.round(num1);
+    document.write("num1 : " + num1, "<br>");
+    document.write("Math.round(num1) : " + roundNum, "<br>");
+    
+    //ceil : 큰숫자 취함(올림)
+    let ceilNum = Math.ceil(num1);
+    document.write("num1 : " + num1, "<br>");
+    document.write("Math.ceil(num2) : " + ceilNum, "<br>");
+    
+    //floor : 작은 숫자를 취함
+    num2 = 2.9999; //2
+    num2 = 2.0001; //2
+    num2 = -2.0001; //-3
+    num2 = -2.0001; //-3
+    let floorNum = Math.floor(num2);
+    document.write("num2 : " + num2, "<br>");
+    document.write("Math.floor(num2) : " + floorNum, "<br>");
+    
+    // trunc : 소수점 이하 버림
+    num2 = 2.9999; //2
+    num2 = 2.0001; //2
+    num2 = -2.0001; //-2
+    num2 = -2.0001; //-2
+    let truncNum = Math.trunc(num2);
+    document.write("num2 : " + num2, "<br>");
+    document.write("Math.trunc(num2) : " + truncNum, "<br>");
+    document.write("<hr>");
+    
+    //Math.random() : 0부터 1미만 실수형 난수 생성(반환) - 0.0 <= ran <1
+    let randomNum = Math.random();
+    document.write("Math.random : " + randomNum, "<br>");
+    
+    for (let i = 0; i < 100; i++) {
+        randomNum = Math.trunc(Math.random() * 10);
+        document.write("Math.trunc(Math.random() * 10) : " + randomNum, "<br>");
+    }
+</script>
+</head>
+<body>
+
+</body>
+</html>

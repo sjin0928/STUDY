@@ -1,0 +1,31 @@
+<!doctype thml>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BOM window.screen</title>
+<script>
+/*
+BOM_window.screen : 사용자 브라우저 창의 URL 정보
+location.href : 주소영역에 있는 URL 정보 설정, 조회
+location.protocol : URL 프로토콜(통신규약) 조회
+location.host : URL 호스트이름(도메인명, 서버명, IP주소)
+location.port : URL 포트번호
+location.pathname : URL 서버상의 자원 위치정보(path)
+location.search : URL 상의 요청 쿼리
+*/
+    
+//location.href = "https://n.news.naver.com/article/003/0012090597?cds=news_media_pc&type=editn";
+    
+    document.write("href : " + location.href, "<br>");
+    document.write("protocol : " + location.protocol, "<br>");
+    document.write("host : " + location.host, "<br>");
+    document.write("port : " + location.port, "<br>");
+    document.write("pathname : " + location.pathname, "<br>");
+    document.write("search : " + location.search, "<br>");
+    
+</script>
+</head>
+<body>
+    <h1>BOM window.screen</h1>
+</body>
+</html>

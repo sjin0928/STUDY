@@ -1,0 +1,59 @@
+<!doctype thml>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+<script>
+    /* 함수(function) 기본 4가지 유형
+    function 함수명 () {}
+    function 함수명 (param) {}
+    function 함수명 () {return 리턴값;}
+    function 함수명 (param) {return 리턴값;}
+    ****/
+    
+    function plus (a, b) {
+        document.write(typeof a + ", " + typeof b, "<br>");
+        document.write("a: " + a + ", b: " + b, "<br>");
+        return a + b;
+    }
+    let sum = plus(100, 200);
+    
+    document.write("plus(100, 200) : " + sum, "<hr>");
+    document.write("plus(100, 200) : " + plus(100, 200), "<hr>");
+    // 값 입력전에는 undefined이므로 100 + undefined = NaN
+    document.write("plus(100) : " + plus(100), "<hr>");
+    document.write("plus() : " + plus(), "<hr>");
+    // 값은 전달되어 실행은 되지만 남은 데이터는 버려짐
+    document.write("plus(100, 200, 300) : " + plus(100, 200, 300), "<hr>");
+    
+    function test() {
+        document.write(">> test() 함수 실행", "<br>");
+    }
+    test();
+    // 함수명, 파라미터 똑같은 값일 때 자바는 오류가 발생하지만, JS는 자동으로 덮어씌워짐
+    // 가장 마지막에 작성된 함수로 실행됨
+    function test() {
+        document.write(">> test() 함수 재정의 실행", "<br>");
+    }
+    function test(param) {
+        document.write(">> test(param) 함수 재정의 실행 - " + param, "<br>");
+    }
+    test("파라미터!!!");
+    test("파라미터1", "파라미터2");
+    document.write("<hr>");
+    
+    //-------------------------
+    //(주의) 함수명과 동일한 이름으로 var 변수 선언시 함수는 사용할 수 없게 된다.
+    //var test = "함수명과 동일한 이름의 변수명칭 사용"; //TypeError: test is not a function
+    let test2 = "함수명과 동일한 이름의 변수명칭 사용"; //Identifier 'test' has already been declared
+    document.write("test : " + test, "<br>");
+    
+    test("홍길동");
+    
+    document.write("<h3>======JavaScript 끝 ========</h3>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

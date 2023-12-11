@@ -1,0 +1,66 @@
+<!doctype thml>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS 연산자</title>
+<script>
+    // 산술연산자 : +, -, *, /, %(나머지 연산), **
+    let num1 = 100;
+    let num2 = 3;
+    document.write("num1 : " + num1 + ", num2: " + num2, "<br>");
+    document.write("num1 + num2 : " + (num1 + num2), "<br>");
+    document.write("num1 - num2 : " + (num1 - num2), "<br>");
+    document.write("num1 * num2 : " + (num1 * num2), "<br>");
+    document.write("num1 / num2 : " + (num1 / num2), "<br>"); //33.333333333333336
+    document.write("num1 % num2 : " + (num1 % num2), "<br>");
+    document.write("num1 ** num2 : " + (num1 ** num2), "<br>");
+    document.write("<hr>");
+    // 증감연산자 : ++, --
+    let num = 100;
+    document.write("num : " + num, "<br>");
+    
+    let result = ++num;// num 값을 1 증가시키고 result에 저장
+    document.write("result = ++num : " + result, "<br>")
+    document.write("num : " + num, "<br>");
+    
+    num = 100;
+    document.write("num : " + num, "<br>");
+    
+    result = num++;// num 값이 연산에 사용되고, 연산 처리 후 num값 1증가 처리
+    document.write("result = num++ : " + result, "<br>")
+    document.write("num : " + num, "<br>");
+    
+    document.write("<hr>");
+    
+    // 부정연산자 : !(not)
+    document.write("true : " + true, "<br>");
+    document.write("!true : " + !true, "<br>");
+    document.write("!false : " + !false, "<br>");
+    
+    // 대입연산자(복합) : =, +=, -=, *=, /=, %=
+    document.write("<hr>");
+    
+    //============================
+    // 비교연산자 : >, <, >=, <=, ==, !=, ===, !==
+    // == : 값 일치하면 true (!= 값이 다르면 true)
+    // === : 값 일치하고 타입이 일치하면 true
+    // !== : 값 불일치 또는 타입이 다를 경우 true
+    document.write('100 == 100 : ' + (100 == 100), "<br>");
+    document.write('100 == "100" : ' + (100 == "100"), "<br>");
+    
+    document.write('100 != 100 : ' + (100 != 100), "<br>");
+    document.write('100 != "100" : ' + (100 != "100"), "<br>");
+    
+    document.write("<h2>--- ===, !== 비교 ----</h2>");
+    document.write('100 === 100 : ' + (100 === 100), "<br>"); // 값일치 + 타입일치
+    document.write('100 === "100" : ' + (100 === "100"), "<br>"); // 타입 불일치
+    
+    document.write('100 !== 100 : ' + (100 !== 100), "<br>"); // 값일치 + 타입일치
+    document.write('100 !== "100" : ' + (100 !== "100"), "<br>"); // 타입 불일치
+    
+</script>
+</head>
+<body>
+
+</body>
+</html>
